@@ -1,0 +1,48 @@
+services:
+  postgres:
+    image: postgres:latest  # Use the latest official PostgreSQL image
+    container_name: pizza-party-db  # Container name for easier management
+    restart: always  # Automatically restart the container if it stops
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}  # Database name (defined in the .env file)
+      POSTGRES_USER: ${POSTGRES_USER}  # Username for connecting to the database (defined in the .env file)
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}  # User password (defined in the .env file)
+    ports:
+      - "${POSTGRES_PORT}:5432"  # Map the database port to the local machine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Volume for data persistence to avoid data loss
+    networks:
+      - pizza-party-network  # Use a separate network for better security
+    deploy:
+      resources:
+        limits:
+          memory: 1G  # Memory limit for the container
+          cpus: '0.50'  # CPU limit for the container
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "${POSTGRES_USER}"]  # Command to check if PostgreSQL is ready
+      interval: 30s  # Frequency of the check (every 30 seconds)
+      retries: 5  # Number of attempts before reporting it as unhealthy
+      start_period: 5s  # Wait time before starting the health checks
+      timeout: 10s  # Maximum time for each health check
+
+  pgadmin:
+    image: dpage/pgadmin4  # Use the official pgAdmin image
+    container_name: pizza-party-pgadmin  # pgAdmin container name
+    restart: always  # Automatically restart the container if it stops
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}  # Default login email for pgAdmin (defined in the .env file)
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}  # Default login password for pgAdmin (defined in the .env file)
+    ports:
+      - "8081:80"  # Map container port 80 to local port 8081
+    networks:
+      - pizza-party-network  # Use the same network as PostgreSQL
+    depends_on:
+      - postgres  # Make sure PostgreSQL is running before starting pgAdmin
+
+networks:
+  pizza-party-network:
+    driver: bridge  # Create a separate network for the services
+
+volumes:
+  postgres_data:
+    driver: local  # Create a local volume for PostgreSQL data
