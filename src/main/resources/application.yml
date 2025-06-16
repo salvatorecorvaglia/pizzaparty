@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: pizzaparty
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pizza_party
+    username: admin
+    password: secret
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
