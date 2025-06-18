@@ -42,7 +42,6 @@ public class Order {
     /**
      * Description of the order, with a maximum length of 255 characters.
      */
-    @Column(length = 255) // Limits the length of the field to 255 characters
     @NotEmpty(message = "The description cannot be empty")
     @Size(max = 255, message = "The description cannot exceed 255 characters")
     private String description;
