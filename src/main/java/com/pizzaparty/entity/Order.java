@@ -1,4 +1,4 @@
-package com.pizzaparty.entities;
+package com.pizzaparty.entity;
 
 import com.pizzaparty.enumeration.OrderStatusEnum;
 import jakarta.persistence.*;

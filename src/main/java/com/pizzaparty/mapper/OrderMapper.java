@@ -1,7 +1,7 @@
 package com.pizzaparty.mapper;
 
 import com.pizzaparty.dto.OrderDTO;
-import com.pizzaparty.entities.Order;
+import com.pizzaparty.entity.Order;
 import org.springframework.stereotype.Component;
 
 /**

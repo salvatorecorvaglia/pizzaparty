@@ -1,10 +1,10 @@
 package com.pizzaparty;
 
 import com.pizzaparty.dto.OrderDTO;
-import com.pizzaparty.entities.Order;
+import com.pizzaparty.entity.Order;
 import com.pizzaparty.enumeration.OrderStatusEnum;
-import com.pizzaparty.exception.OrderInvalidStateException;
-import com.pizzaparty.exception.OrderNotFoundException;
+import com.pizzaparty.exceptions.OrderInvalidStateException;
+import com.pizzaparty.exceptions.OrderNotFoundException;
 import com.pizzaparty.mapper.OrderMapper;
 import com.pizzaparty.repository.OrderRepository;
 import com.pizzaparty.service.OrderServiceImpl;

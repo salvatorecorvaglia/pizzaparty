@@ -1,4 +1,4 @@
-package com.pizzaparty.exception;
+package com.pizzaparty.exceptions;
 
 /**
  * Custom exception to handle the case when an order is not found in the system.

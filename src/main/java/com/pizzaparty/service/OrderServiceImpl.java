@@ -2,12 +2,12 @@ package com.pizzaparty.service;
 
 import com.pizzaparty.config.Utils;
 import com.pizzaparty.dto.OrderDTO;
-import com.pizzaparty.entities.Order;
+import com.pizzaparty.entity.Order;
 import com.pizzaparty.enumeration.OrderStatusEnum;
-import com.pizzaparty.exception.OrderAlreadyExistsException;
-import com.pizzaparty.exception.OrderAlreadyInPreparationException;
-import com.pizzaparty.exception.OrderInvalidStateException;
-import com.pizzaparty.exception.OrderNotFoundException;
+import com.pizzaparty.exceptions.OrderAlreadyExistsException;
+import com.pizzaparty.exceptions.OrderAlreadyInPreparationException;
+import com.pizzaparty.exceptions.OrderInvalidStateException;
+import com.pizzaparty.exceptions.OrderNotFoundException;
 import com.pizzaparty.mapper.OrderMapper;
 import com.pizzaparty.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;

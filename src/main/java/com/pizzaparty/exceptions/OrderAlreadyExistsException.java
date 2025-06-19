@@ -1,4 +1,4 @@
-package com.pizzaparty.exception;
+package com.pizzaparty.exceptions;
 
 /**
  * Custom exception thrown when trying to create an order with a code that already exists in the system.

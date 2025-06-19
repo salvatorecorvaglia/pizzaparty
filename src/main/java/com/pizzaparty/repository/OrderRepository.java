@@ -1,6 +1,6 @@
 package com.pizzaparty.repository;
 
-import com.pizzaparty.entities.Order;
+import com.pizzaparty.entity.Order;
 import com.pizzaparty.enumeration.OrderStatusEnum;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

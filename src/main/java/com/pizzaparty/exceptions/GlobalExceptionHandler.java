@@ -1,4 +1,4 @@
-package com.pizzaparty.exception;
+package com.pizzaparty.exceptions;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

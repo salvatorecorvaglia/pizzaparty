@@ -1,4 +1,4 @@
-package com.pizzaparty.exception;
+package com.pizzaparty.exceptions;
 
 /**
  * Exception thrown when trying to take charge of an order
